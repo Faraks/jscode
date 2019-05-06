@@ -8,7 +8,7 @@ var appData = {
     income : [],
     savings : false,
 };
-for (var i = 0; i < 2; i++) {
+/*for (var i = 0; i < 2; i++) {
     var a = prompt("Введите обязательную статью расходов в этом месяце");
     var b = prompt("Во сколько обойдется?");
     if ( (typeof(a))=== 'string' && (typeof(a)) != null && (typeof(b)) != null
@@ -18,7 +18,30 @@ for (var i = 0; i < 2; i++) {
     } else {
         console.log("not done");
     }
-};
+};*/
+/*while (i < 2) {
+    if ( (typeof(a))=== 'string' && (typeof(a)) != null && (typeof(b)) != null
+        && a != '' && b != '' && a.length < 50) {
+        console.log("done");
+        appData.expenses[a] = b;
+    } else {
+        console.log("not done");
+    }
+    i++;
+};*/
+var a = prompt("Введите обязательную статью расходов в этом месяце");
+var b = prompt("Во сколько обойдется?");
+var i = 0;
+do{
+    if ( (typeof(a))=== 'string' && (typeof(a)) != null && (typeof(b)) != null
+        && a != '' && b != '' && a.length < 50) {
+        console.log("done");
+        appData.expenses[a] = b;
+    } else {
+        console.log("not done");
+    }
+    i++;
+}while (i < 2);
 var budget1day = Math.round(money / 30);
 alert("Ваш бюджет на 1 день составит:" + budget1day);
 if(budget1day < 100) {
